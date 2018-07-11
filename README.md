@@ -1,13 +1,13 @@
-# MyReads Project
+# Rachael's Bookshelf
 
-    This is a book library app. It features 3 shelves for books currently reading, want to read, and already read. The user can search and add books to the desired shelf, and switch shelves if they like.
+This is a book library app I created as part of the React module of the Udacity Front-End Nanodegree. Three shelves - Currently Reading, Want To Read and Read - are available and users may search for books, add them to the shelves, change between shelves or remove the book entirely.
 
-## How to run this app:
+## Running this app:
 
-* install all project dependencies with `npm install`
+* install all project dependencies with `npm install` and `npm install react-router-dom`
 * start the development server with `npm start`
 
-## What You're Getting - Developer info
+## Developer info
 ```bash
 ├── CONTRIBUTING.md
 ├── README.md - This file.
