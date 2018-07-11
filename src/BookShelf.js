@@ -12,20 +12,20 @@ class BookShelf extends React.Component {
                         {this.props.books.map((book) =>
                             <li key={book.id}>
                               {/* render the BookDetails component */}
-                                <BookDetails
-                                  // add placeholder in case there isn't a cover image
-                                    thumbnail={book.imageLinks ? book.imageLinks.thumbnail:`http://via.placeholder.com/128x193?text=Cover`}
-                                    title={book.title}
-                                    authors={book.authors}
-                                    shelf={book.shelf}
-                                    changeShelf={this.props.changeShelf}
-                                    book={book}
-                                />
-                            </li>
-                        )}
-                    </ol>
-                </div>
-            </div>
-        )}}
+                      <BookDetails
+                      // add placeholder in case there isn't a cover image
+                      thumbnail={book.imageLinks ? book.imageLinks.thumbnail:`http://via.placeholder.com/128x193?text=Cover`}
+                      title={book.title}
+                      authors={book.authors}
+                      shelf={book.shelf}
+                      changeShelf={this.props.changeShelf}
+                      book={book}
+                  />
+              </li>
+              )}
+              </ol>
+          </div>
+          </div>
+        )}};
 
 export default BookShelf;

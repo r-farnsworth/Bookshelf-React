@@ -84,7 +84,7 @@ class App extends React.Component {
             />
         )}
         />
-
+        {/* the SearchBooks pane, much like how we did it in the Contacts app */}
         <Route path = "/SearchBooks" render={({ history }) => (
           <SearchBooks
             key={this.props.key}
@@ -95,6 +95,7 @@ class App extends React.Component {
             shelf={this.state.shelf}
           />
         )}/>
+        
       </div>
     )}};
 

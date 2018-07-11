@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI';
 import BookDetails from './BookDetails';
 
-
+// code for searching through the books available
 class SearchBooks extends Component {
     constructor(props) {
         super(props)
@@ -43,7 +43,7 @@ class SearchBooks extends Component {
                 this.setState({results:matchingBooks});
             })}
 
-        // if the query doesn't match any books, don't show anything
+        // if the query doesn't match any book IDs, don't show anything
         else {
             return this.setState({results:[]});
         }};
@@ -51,42 +51,36 @@ class SearchBooks extends Component {
     render() {
         return (
             <div className="search-books">
-                <div className="search-books-bar">
-                  <Link
-                      className="close-search"
-                      to="/"
-                    >Close
-                  </Link>
+              <div className="search-books-bar">
+                <Link className="close-search" to="/">Close</Link>
 
-                    <div className="search-books-input-wrapper">
-                        <input
-                          type="text"
-                          placeholder="Search by title or author"
-                          // used this in Tyler McGinnis bookcamp
-                          onChange={(e) => this.searchInput(e.target.value)}
-                        />
+                  <div className="search-books-input-wrapper">
+                    <input
+                      type="text"
+                      placeholder="Search by title or author"
+                      // used this in Tyler McGinnis bookcamp
+                      onChange={(e) => this.searchInput(e.target.value)} />
                     </div>
                 </div>
 
                 <div className="search-books-results">
-                    <ol className="books-grid">
+                  <ol className="books-grid">
                       {/*pass in any books which have come up in the search result */}
-                        {this.state.results.map((book) =>
+                      {this.state.results.map((book) =>
                           // ensure all books have a key
-                            <li key={book.id}>
-                              <BookDetails
-                                thumbnail={book.imageLinks?book.imageLinks.thumbnail:`http://via.placeholder.com/128x193?text=No%20Cover`}
-                                title={book.title}
-                                authors={book.authors}
-                                shelf={book.shelf}
-                                changeShelf={this.props.changeShelf}
-                                book={book}
-                                />
-                        </li>
-                        )}
-                  </ol>
-              </div>
-            </div>
+                      <li key={book.id}>
+                      <BookDetails
+                        thumbnail={book.imageLinks?book.imageLinks.thumbnail:`http://via.placeholder.com/128x193?text=No%20Cover`}
+                        title={book.title}
+                        authors={book.authors}
+                        shelf={book.shelf}
+                        changeShelf={this.props.changeShelf}
+                        book={book} />
+            </li>
+            )}
+          </ol>
+          </div>
+          </div>
     )}};
 
 export default SearchBooks;

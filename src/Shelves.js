@@ -14,7 +14,11 @@ class Shelves extends Component {
   render() {
     return (
       <div className="list-books">
+        {/* Header component is in a separate file and imported here.
+          If I was revising this project, I wonder if I could separate out each shelf and import them
+          in order to make my code smaller? */}
         <Header />
+
         <div className="list-books-content">
 
           {/* Bookshelf for books currently reading */}
@@ -46,11 +50,9 @@ class Shelves extends Component {
         </div>
 
         <div className="open-search">
-          <Link
-            to="/SearchBooks"
-          >Add a book</Link>
+          <Link to="/SearchBooks">Add a book</Link>
         </div>
       </div>
-    )}}
+    )}};
 
 export default Shelves;
